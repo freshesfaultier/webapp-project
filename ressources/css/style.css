@@ -31,6 +31,66 @@
     height: 3rem;
 }
 
+/*--------- Background -------------*/
+
+body {
+    background-color: #070f10; /* dein gewünschter Dark-Mode-Hintergrund */
+}
+
+/*----------- Font --------------*/
+body {
+    font-family: "Audiowide", sans-serif;
+}
+
+/*---------- Button -------------*/
+
+/* From Uiverse.io by cssbuttons-io */
+.gbutton {
+    align-items: center;
+    background-image: linear-gradient(144deg, #ff4e50, #ff0000 50%, #b30000);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(255, 0, 0, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gbutton:active,
+.gbutton:hover {
+    outline: 0;
+}
+
+.gbutton span {
+    background-color: rgb(45, 0, 0);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.gbutton:hover span {
+    background: none;
+}
+
+.gbutton:active {
+    transform: scale(0.9);
+}
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 

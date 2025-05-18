@@ -125,33 +125,141 @@ body {
 }
 
 /* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-    margin-bottom: 4rem;
+/* Globale Karussell-Container Anpassungen */
+#customCarousel {
+    background-color: #070f10;
+    border-radius: 0.25rem;
+    height: 70vh;
+    min-height: 350px;
+    max-height: 600px;
+    overflow: hidden; /* Wichtig: Stellt sicher, dass nichts Überstehendes vom Hauptcontainer angezeigt wird */
+    position: relative; /* Unbedingt erforderlich für die absolute Positionierung der Kind-Elemente wie Indikatoren */
+    padding-bottom: 60px; /* Erhöhter Wert für mehr Platz, passen Sie ihn bei Bedarf an (z.B. 50px - 70px) */
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-    bottom: 3rem;
-    z-index: 10;
+
+/* Der innere Bereich, der die Slides enthält */
+.carousel-inner {
+    height: 100%; /* Sollte die Höhe des #customCarousel abzüglich des Paddings nutzen können */
+    overflow: hidden; /* NEU: Verhindert, dass Inhalte (wie zu hohe Captions) in den Padding-Bereich von #customCarousel hineinragen */
 }
 
-/* Declare heights because of positioning of img element */
 .carousel-item {
-    height: 32rem;
+    height: 100%;
 }
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+.carousel-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
 
-@media (min-width: 40em) {
-    /* Bump up size of carousel content */
-    .carousel-caption p {
-        margin-bottom: 1.25rem;
-        font-size: 1.25rem;
-        line-height: 1.4;
+.carousel-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-caption {
+    color: #ffffff;
+    /* Standard Bootstrap Positionierung (bottom: 1.25rem relativ zum .carousel-item)
+       Wenn die Caption immer noch die Indikatoren überlappt, obwohl diese tiefer liegen,
+       könnte die Caption selbst zu hoch sein oder ihr 'bottom'-Wert muss angepasst werden.
+       Testweise können Sie hier 'z-index: 1;' setzen, falls es ein Stapelproblem ist. */
+    /* z-index: 1; */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Indikatoren (Punkte unten) - Überarbeitete Regeln */
+.carousel-indicators {
+    position: absolute;
+    right: 0; /* Behält die horizontale Zentrierungslogik von Bootstrap bei */
+    left: 0; /* Behält die horizontale Zentrierungslogik von Bootstrap bei */
+    bottom: 15px; /* NEU: Expliziter Abstand vom unteren Rand des #customCarousel.
+                     Dieser Wert positioniert die Indikatoren innerhalb des padding-bottom Bereichs.
+                     Anpassen, sodass sie gut im 60px Padding sitzen (z.B. 10px - 25px). */
+    margin-bottom: 0; /* NEU: Überschreibt Bootstraps margin-bottom, da wir 'bottom' direkt steuern. */
+    z-index: 15; /* NEU: Erhöhter z-index, um sicherzustellen, dass sie über der Caption liegen.
+                         Bootstrap Standard ist oft z-index: 2 für Indikatoren. */
+    display: flex; /* Notwendig für Bootstrap 5 zur Zentrierung der Buttons */
+    justify-content: center; /* Zentriert die Indikator-Buttons */
+    padding-left: 0; /* Entfernt Standard-Padding von Listen */
+    list-style: none; /* Entfernt Listensymbole, falls vorhanden */
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #ffffff;
+    opacity: 0.7;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 0; /* Stellt sicher, dass keine unerwünschten Ränder vorhanden sind */
+    cursor: pointer; /* Stellt sicher, dass der Cursor korrekt angezeigt wird */
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #e31809;
+}
+
+/* Steuerelemente (Pfeile) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 0.8em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile Anpassungen - padding-bottom und Indikatoren-Position anpassen */
+@media (max-width: 992px) {
+    #customCarousel {
+        padding-bottom: 55px; /* Angepasster Wert */
     }
+    .carousel-indicators {
+        bottom: 12px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
+}
+
+@media (max-width: 768px) {
+    #customCarousel {
+        padding-bottom: 50px; /* Angepasster Wert */
+    }
+    .carousel-indicators {
+        bottom: 10px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
+}
+
+@media (max-width: 576px) {
+    #customCarousel {
+        padding-bottom: 45px; /* Angepasster Wert */
+    }
+    .carousel-indicators {
+        bottom: 8px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
 }
 
 /*------------------Custom------------------ */

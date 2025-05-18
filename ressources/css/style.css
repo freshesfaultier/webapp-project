@@ -37,6 +37,11 @@ body {
     background-color: #070f10; /* dein gewünschter Dark-Mode-Hintergrund */
 }
 
+/*-----------Feature Icon -----------*/
+.feature-icon {
+    background: linear-gradient(135deg, #e13e3e, #b30000);
+}
+
 /*----------- Font --------------*/
 body {
     font-family: "Audiowide", sans-serif;

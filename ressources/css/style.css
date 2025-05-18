@@ -43,7 +43,7 @@ body {
 }
 
 /*----------- Font --------------*/
-body {
+.audiowide-font {
     font-family: "Audiowide", sans-serif;
 }
 
@@ -128,35 +128,87 @@ body {
 
 /*------------------Custom------------------ */
 
-/* From Uiverse.io by Tiagoadag */
+/* style.css (angepasster Teil) */
+
+/* Karten-Styling angepasst für Pop-Out Effekt */
 .ccard {
-    width: 290px;
-    height: 254px;
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-    border-radius: 20px;
-    transition: all 0.3s;
-}
-
-.ccard2 {
-    width: 290px;
-    height: 254px;
-    background-color: var(--bs-body-bg);
-    border-radius: 18px;
-    transition: all 0.2s;
-}
-
-.ccard2:hover {
-    transform: scale(0.98);
-    border-radius: 20px;
+    width: 100%;
+    max-width: 320px; /* Maximale Breite der Karte */
+    height: 280px; /* Feste Höhe für Konsistenz, anpassbar */
+    background-image: linear-gradient(163deg, #ff4136 0%, #b80000 100%);
+    border-radius: 20px; /* Äußere Rundung der "Glow"-Karte */
+    /* Wichtig: z-index Transition so einstellen, dass sie beim Hover sofort greift */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0s linear 0s; /* z-index sofort ändern */
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible; /* Erlaubt dem Box-Shadow und dem Bild, über die Grenzen zu gehen */
+    position: relative; /* Notwendig, um einen Stacking Context zu erstellen */
+    z-index: 1; /* Standard-Stapelreihenfolge */
 }
 
 .ccard:hover {
-    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.3);
+    /* transform: translateY(-8px); /* Optional: Karte leicht anheben */
+    box-shadow: 0px 12px 45px 8px rgba(255, 65, 54, 0.4); /* Verstärkter Schatten */
+    z-index: 100; /* Bringt die gesamte Karte nach vorne */
+    /* Sicherstellen, dass der z-index auch beim Verlassen schnell zurückgesetzt wird, falls Hover-Out-Verzögerung gewünscht */
+    /* transition: transform 0.35s ..., box-shadow 0.35s ..., z-index 0s linear 0.35s; (für Zurücksetzen mit Verzögerung) */
 }
 
-.ccard,
 .ccard2 {
-    overflow: visible;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-body-bg);
+    border-radius: 17px; /* Innere Rundung, etwas weniger als .ccard */
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* WICHTIG: Muss visible sein, damit .glow-img herausragen kann */
+}
+
+.ccard:hover .ccard2 {
+    transform: scale(
+        0.97
+    ); /* Innere Karte verkleinert sich leicht, verstärkt Pop-Out des Bildes */
+    /* border-radius: 16px; /* Kann angepasst werden, wenn die innere Karte schrumpft */
+}
+
+.glow-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild füllt den Container, behält Seitenverhältnis bei, schneidet ggf. ab */
+    border-radius: 17px; /* Bild bekommt dieselbe Rundung wie .ccard2 für nahtlosen Look */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        /* Federnde Transition */ filter 0.4s ease-out;
+    transform-style: preserve-3d; /* Für 3D-Transformationen */
+    position: relative; /* Notwendig für z-index und korrekte Transformation */
+    z-index: 5; /* Über dem Hintergrund von .ccard2 */
+}
+
+/* Effekt, wenn die äußere Karte (.ccard) gehovert wird */
+.ccard:hover .glow-img {
+    /* Skalierung (z.B. 1.1 = 10% größer) und 3D-Transformationen */
+    /* Eine Skalierung von 1.1 bei 300px Breite bedeutet 15px Überstand auf jeder Seite. */
+    /* Bootstrap-Gutter sind ca. 12px (0.75rem) pro Seite. Leichte Überlappung ist ok. */
+    transform: scale(1.12) rotateX(6deg) rotateY(-5deg) translateZ(25px);
+    filter: brightness(1.2) drop-shadow(0 15px 30px rgba(255, 65, 54, 0.55));
+    z-index: 10; /* Stellt sicher, dass das Bild über anderen Inhalten in .ccard2 bleibt */
+    /* Dieser z-index ist relativ zum Stacking Context von .ccard */
+}
+
+/* Media Query für kleinere Bildschirme (Anpassungen wie zuvor) */
+@media (max-width: 576px) {
+    .ccard {
+        height: auto; /* Höhe automatisch anpassen */
+        min-height: 230px; /* Mindesthöhe beibehalten */
+    }
+    /* .glow-img Anpassungen hier falls nötig, z.B. object-fit: contain */
+
+    .ccard:hover .glow-img {
+        transform: scale(1.06) translateZ(10px); /* Weniger starke Animation auf Mobilgeräten */
+        filter: brightness(1.1) drop-shadow(0 8px 18px rgba(255, 65, 54, 0.45));
+    }
 }
 
 /*------------------- navbar neon ---------*/
@@ -188,21 +240,6 @@ body {
 
 /*----------------------------------------------------------------------*/
 
-/* Neue Klasse für das Bild */
-.glow-img {
-    transition: transform 0.4s ease, filter 0.4s ease;
-    transform-style: preserve-3d;
-    z-index: 10;
-    position: relative;
-}
-
-/* Effekt beim Hover über die innere Karte */
-.ccard2:hover .glow-img {
-    transform: scale(1.2) rotateX(8deg) rotateY(-5deg);
-    filter: brightness(1.2) drop-shadow(0 10px 20px rgba(0, 255, 117, 0.5));
-    z-index: 20;
-}
-
 /* Scrollbar */
 /* Scrollbar - Allgemeines Styling */
 ::-webkit-scrollbar {
@@ -227,159 +264,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #ff4d4d; /* Helleres Rot beim Hover-Effekt */
     box-shadow: 0 0 15px #ff4d4d, 0 0 25px #ff4d4d, 0 0 35px #ff4d4d; /* Intensiverer Neon-Effekt beim Hover */
-}
-
-/* UI Verse */
-/* From Uiverse.io by Pradeepsaranbishnoi */
-.voltage-button {
-    position: relative;
-}
-
-.voltage-button button {
-    color: white;
-    background: #0d1127;
-    padding: 1rem 3rem 1rem 3rem;
-    border-radius: 5rem;
-    border: 5px solid #5978f3;
-    font-size: 1.2rem;
-    line-height: 1em;
-    letter-spacing: 0.075em;
-    transition: background 0.3s;
-}
-
-.voltage-button button:hover {
-    cursor: pointer;
-    background: #0f1c53;
-}
-
-.voltage-button button:hover + svg,
-.voltage-button button:hover + svg + .dots {
-    opacity: 1;
-}
-
-.voltage-button svg {
-    display: block;
-    position: absolute;
-    top: -0.75em;
-    left: -0.25em;
-    width: calc(100% + 0.5em);
-    height: calc(100% + 1.5em);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s;
-    transition-delay: 0.1s;
-}
-
-.voltage-button svg path {
-    stroke-dasharray: 100;
-    filter: url("#glow");
-}
-
-.voltage-button svg path.line-1 {
-    stroke: #f6de8d;
-    stroke-dashoffset: 0;
-    animation: spark-1 3s linear infinite;
-}
-
-.voltage-button svg path.line-2 {
-    stroke: #6bfeff;
-    stroke-dashoffset: 500;
-    animation: spark-2 3s linear infinite;
-}
-
-.voltage-button .dots {
-    opacity: 0;
-    transition: opacity 0.3s;
-    transition-delay: 0.4s;
-}
-
-.voltage-button .dots .dot {
-    width: 1rem;
-    height: 1rem;
-    background: white;
-    border-radius: 100%;
-    position: absolute;
-    opacity: 0;
-}
-
-.voltage-button .dots .dot-1 {
-    top: 0;
-    left: 20%;
-    animation: fly-up 3s linear infinite;
-}
-
-.voltage-button .dots .dot-2 {
-    top: 0;
-    left: 55%;
-    animation: fly-up 3s linear infinite;
-    animation-delay: 0.5s;
-}
-
-.voltage-button .dots .dot-3 {
-    top: 0;
-    left: 80%;
-    animation: fly-up 3s linear infinite;
-    animation-delay: 1s;
-}
-
-.voltage-button .dots .dot-4 {
-    bottom: 0;
-    left: 30%;
-    animation: fly-down 3s linear infinite;
-    animation-delay: 2.5s;
-}
-
-.voltage-button .dots .dot-5 {
-    bottom: 0;
-    left: 65%;
-    animation: fly-down 3s linear infinite;
-    animation-delay: 1.5s;
-}
-
-@keyframes spark-1 {
-    to {
-        stroke-dashoffset: -1000;
-    }
-}
-
-@keyframes spark-2 {
-    to {
-        stroke-dashoffset: -500;
-    }
-}
-
-@keyframes fly-up {
-    0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.2);
-    }
-
-    5% {
-        opacity: 1;
-        transform: translateY(-1.5rem) scale(0.4);
-    }
-
-    10%,
-    100% {
-        opacity: 0;
-        transform: translateY(-3rem) scale(0.2);
-    }
-}
-
-@keyframes fly-down {
-    0% {
-        opacity: 0;
-        transform: translateY(0) scale(0.2);
-    }
-
-    5% {
-        opacity: 1;
-        transform: translateY(1.5rem) scale(0.4);
-    }
-
-    10%,
-    100% {
-        opacity: 0;
-        transform: translateY(3rem) scale(0.2);
-    }
 }

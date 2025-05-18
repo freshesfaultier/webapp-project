@@ -1,7 +1,7 @@
 /*--------- Background -------------*/
 
 body {
-    background-color: #070f10; /* dein gewünschter Dark-Mode-Hintergrund */
+    background-color: #060e0f; /* dein gewünschter Dark-Mode-Hintergrund */
 }
 
 /*----------- Font --------------*/
@@ -47,7 +47,7 @@ body {
 
 /* Scrollbar - Daumen (der bewegliche Teil) */
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(163, 22, 22); /* Rote Farbe für den Daumen */
+    background-color: rgb(226, 45, 45); /* Rote Farbe für den Daumen */
     border-radius: 10px; /* Abgerundete Ecken */
     box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Neon-Effekt */
 }

@@ -134,7 +134,7 @@ body {
 .ccard {
     width: 100%;
     max-width: 320px; /* Maximale Breite der Karte */
-    height: 280px; /* Feste Höhe für Konsistenz, anpassbar */
+    height: 260px; /* Feste Höhe für Konsistenz, anpassbar */
     background-image: linear-gradient(163deg, #ff4136 0%, #b80000 100%);
     border-radius: 20px; /* Äußere Rundung der "Glow"-Karte */
     /* Wichtig: z-index Transition so einstellen, dass sie beim Hover sofort greift */
@@ -195,20 +195,6 @@ body {
     filter: brightness(1.2) drop-shadow(0 15px 30px rgba(255, 65, 54, 0.55));
     z-index: 10; /* Stellt sicher, dass das Bild über anderen Inhalten in .ccard2 bleibt */
     /* Dieser z-index ist relativ zum Stacking Context von .ccard */
-}
-
-/* Media Query für kleinere Bildschirme (Anpassungen wie zuvor) */
-@media (max-width: 576px) {
-    .ccard {
-        height: auto; /* Höhe automatisch anpassen */
-        min-height: 230px; /* Mindesthöhe beibehalten */
-    }
-    /* .glow-img Anpassungen hier falls nötig, z.B. object-fit: contain */
-
-    .ccard:hover .glow-img {
-        transform: scale(1.06) translateZ(10px); /* Weniger starke Animation auf Mobilgeräten */
-        filter: brightness(1.1) drop-shadow(0 8px 18px rgba(255, 65, 54, 0.45));
-    }
 }
 
 /*------------------- navbar neon ---------*/

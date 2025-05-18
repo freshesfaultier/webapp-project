@@ -1,0 +1,250 @@
+/*---------- Features ----------*/
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #e13e3e, #b30000);
+}
+
+.icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-2 {
+    text-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-3 {
+    text-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.feature-icon-small {
+    width: 3rem;
+    height: 3rem;
+}
+
+/*--------- Responsive Hero Image -----------*/
+/* Standard-Styling für kleinere Geräte (Mobile First Ansatz) */
+#responsiveLogo {
+    max-width: 275px; /* Kleinere max-width für kleine Bildschirme */
+    height: auto;
+}
+
+/* Medium-Geräte (z.B. Tablets) */
+@media (min-width: 768px) {
+    #responsiveLogo {
+        max-width: 350px; /* Deine ursprüngliche max-width */
+    }
+}
+
+/* Große Geräte (z.B. Desktops) */
+@media (min-width: 992px) {
+    #responsiveLogo {
+        max-width: 460px; /* Größere max-width für Desktops */
+    }
+}
+
+/* Extra große Geräte (z.B. große Desktops) */
+@media (min-width: 1200px) {
+    #responsiveLogo {
+        max-width: 512px; /* Noch größere max-width */
+    }
+}
+
+/*---------- Button -------------*/
+
+/* From Uiverse.io by cssbuttons-io */
+.gbutton {
+    align-items: center;
+    background-image: linear-gradient(144deg, #ff4e50, #ff0000 50%, #b30000);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(255, 0, 0, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gbutton:active,
+.gbutton:hover {
+    outline: 0;
+}
+
+.gbutton span {
+    background-color: rgb(45, 0, 0);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+.gbutton:hover span {
+    background: none;
+}
+
+.gbutton:active {
+    transform: scale(0.9);
+}
+
+/* CUSTOMIZE THE CAROUSEL
+/* Globale Karussell-Container Anpassungen */
+#customCarousel {
+    background-color: #070f10;
+    border-radius: 0.25rem;
+    height: 70vh;
+    min-height: 350px;
+    max-height: 600px;
+    overflow: hidden; /* Wichtig: Stellt sicher, dass nichts Überstehendes vom Hauptcontainer angezeigt wird */
+    position: relative; /* Unbedingt erforderlich für die absolute Positionierung der Kind-Elemente wie Indikatoren */
+    padding-bottom: 60px; /* Erhöhter Wert für mehr Platz, passen Sie ihn bei Bedarf an (z.B. 50px - 70px) */
+}
+
+/* Der innere Bereich, der die Slides enthält */
+.carousel-inner {
+    height: 100%; /* Sollte die Höhe des #customCarousel abzüglich des Paddings nutzen können */
+    overflow: hidden; /* NEU: Verhindert, dass Inhalte (wie zu hohe Captions) in den Padding-Bereich von #customCarousel hineinragen */
+}
+
+.carousel-item {
+    height: 100%;
+}
+
+.carousel-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.carousel-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-caption {
+    color: #ffffff;
+    /* Standard Bootstrap Positionierung (bottom: 1.25rem relativ zum .carousel-item)
+       Wenn die Caption immer noch die Indikatoren überlappt, obwohl diese tiefer liegen,
+       könnte die Caption selbst zu hoch sein oder ihr 'bottom'-Wert muss angepasst werden.
+       Testweise können Sie hier 'z-index: 1;' setzen, falls es ein Stapelproblem ist. */
+    /* z-index: 1; */
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Indikatoren (Punkte unten) - Überarbeitete Regeln */
+.carousel-indicators {
+    position: absolute;
+    right: 0; /* Behält die horizontale Zentrierungslogik von Bootstrap bei */
+    left: 0; /* Behält die horizontale Zentrierungslogik von Bootstrap bei */
+    bottom: 15px; /* NEU: Expliziter Abstand vom unteren Rand des #customCarousel.
+                     Dieser Wert positioniert die Indikatoren innerhalb des padding-bottom Bereichs.
+                     Anpassen, sodass sie gut im 60px Padding sitzen (z.B. 10px - 25px). */
+    margin-bottom: 0; /* NEU: Überschreibt Bootstraps margin-bottom, da wir 'bottom' direkt steuern. */
+    z-index: 15; /* NEU: Erhöhter z-index, um sicherzustellen, dass sie über der Caption liegen.
+                         Bootstrap Standard ist oft z-index: 2 für Indikatoren. */
+    display: flex; /* Notwendig für Bootstrap 5 zur Zentrierung der Buttons */
+    justify-content: center; /* Zentriert die Indikator-Buttons */
+    padding-left: 0; /* Entfernt Standard-Padding von Listen */
+    list-style: none; /* Entfernt Listensymbole, falls vorhanden */
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #ffffff;
+    opacity: 0.7;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 4px;
+    border: 0; /* Stellt sicher, dass keine unerwünschten Ränder vorhanden sind */
+    cursor: pointer; /* Stellt sicher, dass der Cursor korrekt angezeigt wird */
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #e31809;
+}
+
+/* Steuerelemente (Pfeile) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    padding: 0.8em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile Anpassungen - padding-bottom und Indikatoren-Position anpassen */
+@media (max-width: 992px) {
+    #customCarousel {
+        padding-bottom: 55px; /* Angepasster Wert */
+    }
+    .carousel-indicators {
+        bottom: 12px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
+}
+
+@media (max-width: 768px) {
+    #customCarousel {
+        padding-bottom: 50px; /* Angepasster Wert */
+    }
+    .carousel-indicators {
+        bottom: 10px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
+}
+
+@media (max-width: 576px) {
+    #customCarousel {
+        padding-bottom: 45px; /* Angepasster Wert */
+    }
+    .carousel-indicators {
+        bottom: 8px; /* Angepasster Wert */
+    }
+    /* ... restliche mobile Stile ... */
+}

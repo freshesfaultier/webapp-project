@@ -1,0 +1,70 @@
+/*------------------Gaallery------------------ */
+
+/* style.css (angepasster Teil) */
+
+/* Karten-Styling angepasst für Pop-Out Effekt */
+.ccard {
+    width: 100%;
+    max-width: 320px; /* Maximale Breite der Karte */
+    height: 260px; /* Feste Höhe für Konsistenz, anpassbar */
+    background-image: linear-gradient(163deg, #ff4136 0%, #b80000 100%);
+    border-radius: 20px; /* Äußere Rundung der "Glow"-Karte */
+    /* Wichtig: z-index Transition so einstellen, dass sie beim Hover sofort greift */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0s linear 0s; /* z-index sofort ändern */
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible; /* Erlaubt dem Box-Shadow und dem Bild, über die Grenzen zu gehen */
+    position: relative; /* Notwendig, um einen Stacking Context zu erstellen */
+    z-index: 1; /* Standard-Stapelreihenfolge */
+}
+
+.ccard:hover {
+    /* transform: translateY(-8px); /* Optional: Karte leicht anheben */
+    box-shadow: 0px 12px 45px 8px rgba(255, 65, 54, 0.4); /* Verstärkter Schatten */
+    z-index: 100; /* Bringt die gesamte Karte nach vorne */
+    /* Sicherstellen, dass der z-index auch beim Verlassen schnell zurückgesetzt wird, falls Hover-Out-Verzögerung gewünscht */
+    /* transition: transform 0.35s ..., box-shadow 0.35s ..., z-index 0s linear 0.35s; (für Zurücksetzen mit Verzögerung) */
+}
+
+.ccard2 {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-body-bg);
+    border-radius: 17px; /* Innere Rundung, etwas weniger als .ccard */
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* WICHTIG: Muss visible sein, damit .glow-img herausragen kann */
+}
+
+.ccard:hover .ccard2 {
+    transform: scale(
+        0.97
+    ); /* Innere Karte verkleinert sich leicht, verstärkt Pop-Out des Bildes */
+    /* border-radius: 16px; /* Kann angepasst werden, wenn die innere Karte schrumpft */
+}
+
+.glow-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Bild füllt den Container, behält Seitenverhältnis bei, schneidet ggf. ab */
+    border-radius: 17px; /* Bild bekommt dieselbe Rundung wie .ccard2 für nahtlosen Look */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        /* Federnde Transition */ filter 0.4s ease-out;
+    transform-style: preserve-3d; /* Für 3D-Transformationen */
+    position: relative; /* Notwendig für z-index und korrekte Transformation */
+    z-index: 5; /* Über dem Hintergrund von .ccard2 */
+}
+
+/* Effekt, wenn die äußere Karte (.ccard) gehovert wird */
+.ccard:hover .glow-img {
+    /* Skalierung (z.B. 1.1 = 10% größer) und 3D-Transformationen */
+    /* Eine Skalierung von 1.1 bei 300px Breite bedeutet 15px Überstand auf jeder Seite. */
+    /* Bootstrap-Gutter sind ca. 12px (0.75rem) pro Seite. Leichte Überlappung ist ok. */
+    transform: scale(1.12) rotateX(6deg) rotateY(-5deg) translateZ(25px);
+    filter: brightness(1.2) drop-shadow(0 15px 30px rgba(255, 65, 54, 0.55));
+    z-index: 10; /* Stellt sicher, dass das Bild über anderen Inhalten in .ccard2 bleibt */
+    /* Dieser z-index ist relativ zum Stacking Context von .ccard */
+}

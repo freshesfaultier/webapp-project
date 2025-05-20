@@ -1,0 +1,46 @@
+/* Benutzerdefinierte Stile für FAQ-Akkordeon */
+#faqAccordion .accordion-button {
+    color: #ffffff; /* Standard Textfarbe für nicht aktiven Button */
+    background-color: #212529; /* Standard Hintergrund für nicht aktiven Button */
+}
+
+#faqAccordion .accordion-button:hover {
+    background-color: #491a20; /* Dunklerer Rotton für Hover */
+    color: #f8d7da; /* Hellerer Rotton für Text bei Hover */
+}
+
+#faqAccordion .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.5); /* Roter Fokus-Ring */
+    border-color: #dc3545;
+}
+
+#faqAccordion .accordion-button:not(.collapsed) {
+    background-color: #dc3545; /* Helleres Rot für aktiven/ausgewählten Button */
+    color: white; /* Weiße Textfarbe für aktiven Button */
+}
+
+/* Pfeil-Farbe für den Standardzustand (zugeklappt) */
+#faqAccordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f8d7da'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Pfeil-Farbe für den Hover-Zustand */
+#faqAccordion .accordion-button:hover::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f8d7da'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* Pfeil-Farbe für den aktiven/ausgewählten Zustand (aufgeklappt) */
+#faqAccordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: rotate(-180deg);
+}
+
+/* Optional: Link im "Weitere Fragen"-Bereich anpassen */
+#faq .d-flex a {
+    color: #ff6b6b; /* Hellerer Rotton für den Link */
+    text-decoration: none;
+}
+#faq .d-flex a:hover {
+    color: #e74c3c; /* Dunklerer Rotton für den Link bei Hover */
+    text-decoration: underline;
+}

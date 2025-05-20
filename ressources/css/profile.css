@@ -1,0 +1,75 @@
+/* ./ressources/css/profile.css */
+
+.profile-header {
+    padding: 2.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    background-color: var(--bs-tertiary-bg);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(var(--bs-danger-rgb), 0.3);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.profile-header h1 {
+    color: var(--bs-danger);
+    text-shadow: 0 0 8px rgba(var(--bs-danger-rgb), 0.5);
+}
+
+.profile-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--bs-danger);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(var(--bs-danger-rgb), 0.6);
+}
+
+.profile-section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.6);
+    border-radius: 0.5rem;
+    border: 1px solid rgba(var(--bs-border-color-translucent), 0.6);
+    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.2);
+}
+
+.profile-section h2.border-bottom {
+    color: var(--bs-danger);
+    border-bottom-color: rgba(var(--bs-danger-rgb), 0.4) !important;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-section .car-card {
+    background-color: var(--bs-dark-bg-subtle);
+    border: 1px solid rgba(var(--bs-danger-rgb), 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.profile-section .car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0.75rem 1.5rem rgba(var(--bs-danger-rgb), 0.2);
+}
+
+.profile-section .car-card img {
+    max-height: 220px;
+    object-fit: cover;
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
+}
+
+.profile-section .card-title {
+    color: var(--bs-light);
+}
+
+.profile-section .card-text {
+    font-size: 0.9rem;
+}
+
+.navbar .btn-profile-active {
+     
+    background-image: linear-gradient(144deg, #e13e3e, #b30000 50%, #ff0000) !important;
+    color: white !important;
+    
+}

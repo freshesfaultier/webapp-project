@@ -1,0 +1,61 @@
+/* ./ressources/css/auth.css */
+
+.login-container,
+.register-container {
+    max-width: 500px;
+    margin-top: 5rem; /* Genug Abstand zur Navbar */
+    margin-bottom: 5rem; /* Abstand zum Footer */
+    padding: 2.5rem; /* Etwas mehr Padding */
+    background-color: rgba(var(--bs-tertiary-bg-rgb), 0.85); /* Etwas deckender als zuvor */
+    border-radius: 0.75rem; /* Etwas größere Rundung */
+    box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.4); /* Stärkerer Schatten */
+    border: 1px solid rgba(var(--bs-danger-rgb), 0.3); /* Dezenter roter Rand */
+}
+
+.login-container h1,
+.register-container h1 {
+    color: var(--bs-danger); /* Überschriften in Akzentfarbe (Rot) */
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px rgba(var(--bs-danger-rgb), 0.5); /* Leichter Glow-Effekt für die Überschrift */
+}
+
+/* Anpassung der Formular-Steuerelemente für besseren Dark-Mode-Kontrast */
+.auth-form .form-control {
+    background-color: rgba(var(--bs-body-bg-rgb), 0.7);
+    border-color: rgba(var(--bs-danger-rgb), 0.3);
+    color: var(--bs-body-color); /* Stellt sicher, dass Text im Input lesbar ist */
+}
+
+.auth-form .form-control:focus {
+    background-color: rgba(var(--bs-body-bg-rgb), 0.9);
+    border-color: var(--bs-danger);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+    color: var(--bs-body-color);
+}
+
+.auth-form .form-check-input {
+     background-color: rgba(var(--bs-body-bg-rgb), 0.7);
+     border-color: rgba(var(--bs-danger-rgb), 0.3);
+}
+.auth-form .form-check-input:checked {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+.auth-form .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+
+.auth-form .link-light {
+    color: var(--bs-gray-400) !important;
+    text-decoration: none;
+}
+
+.auth-form .link-light:hover {
+    color: var(--bs-danger) !important;
+    text-decoration: underline;
+}
+
+.auth-form .gbutton {
+    margin-top: 1rem; /* Etwas Abstand nach oben zum letzten Formularfeld */
+}

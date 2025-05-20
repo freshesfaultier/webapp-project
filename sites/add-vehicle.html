@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Fahrzeug hinzufügen - Underground Society</title>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../ressources/css/style.css" />
+        <link rel="stylesheet" href="../ressources/css/user-forms.css" />
+        <link
+            rel="stylesheet"
+            href="../ressources/icons/bootstrap-icons.min.css"
+        />
+        <link
+            href="../ressources/fonts/audiowide/audiowide.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100 audiowide-font">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"
+                    >UNDERGROUND SOCIETY</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html"
+                                >Galerie</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./forum.html">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./events.html">Events</a>
+                        </li>
+                    </ul>
+
+                    <button
+                        onclick="window.location.href='./profile.html'"
+                        class="btn btn-danger"
+                        type="submit"
+                    >
+                        Profil
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar-neon-accent"></div>
+
+        <main class="container flex-grow-1">
+            <div class="form-container mx-auto">
+                <h1 class="text-center">Neues Fahrzeug hinzufügen</h1>
+                <form id="addVehicleForm">
+                    <div class="mb-3">
+                        <label for="vehicleName" class="form-label"
+                            >Fahrzeugname / Titel</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="vehicleName"
+                            name="vehicleName"
+                            placeholder="z.B. Mein Biest auf Rädern"
+                            required
+                        />
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="vehicleBrand" class="form-label"
+                                >Marke</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="vehicleBrand"
+                                name="vehicleBrand"
+                                placeholder="z.B. Porsche"
+                                required
+                            />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="vehicleModel" class="form-label"
+                                >Modell</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="vehicleModel"
+                                name="vehicleModel"
+                                placeholder="z.B. 911 GT3 RS"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="vehicleYear" class="form-label"
+                                >Baujahr</label
+                            >
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="vehicleYear"
+                                name="vehicleYear"
+                                placeholder="z.B. 2023"
+                                min="1900"
+                                max="2099"
+                                required
+                            />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="vehicleColor" class="form-label"
+                                >Farbe</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="vehicleColor"
+                                name="vehicleColor"
+                                placeholder="z.B. Kreidegrau"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="vehicleEngine" class="form-label"
+                            >Motor</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="vehicleEngine"
+                            name="vehicleEngine"
+                            placeholder="z.B. 4.0L 6-Zylinder Boxer Saugmotor"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="vehiclePower" class="form-label"
+                            >Leistung (PS oder kW)</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="vehiclePower"
+                            name="vehiclePower"
+                            placeholder="z.B. 525 PS"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="vehicleDescription" class="form-label"
+                            >Kurzbeschreibung</label
+                        >
+                        <textarea
+                            class="form-control"
+                            id="vehicleDescription"
+                            name="vehicleDescription"
+                            rows="3"
+                            placeholder="Eine kurze, prägnante Beschreibung deines Fahrzeugs."
+                        ></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="vehicleModifications" class="form-label"
+                            >Umbauten & Modifikationen</label
+                        >
+                        <textarea
+                            class="form-control"
+                            id="vehicleModifications"
+                            name="vehicleModifications"
+                            rows="5"
+                            placeholder="Liste hier besondere Umbauten, Tuning-Maßnahmen oder einzigartige Merkmale auf."
+                        ></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="vehicleImage" class="form-label"
+                            >Fahrzeugbild (Hauptbild)</label
+                        >
+                        <input
+                            class="form-control"
+                            type="file"
+                            id="vehicleImage"
+                            name="vehicleImage"
+                            accept="image/*"
+                        />
+                        <div class="form-text">
+                            Wähle das Hauptbild für dein Fahrzeug.
+                        </div>
+                    </div>
+                    <div id="imagePreviewContainer" class="mb-3 text-center">
+                        <img
+                            id="vehicleImagePreview"
+                            src="../ressources/images/car_placeholder.png"
+                            alt="Fahrzeugbild Vorschau"
+                            style="
+                                max-width: 200px;
+                                height: auto;
+                                border-radius: 0.25rem;
+                                object-fit: cover;
+                                display: block;
+                                margin: 0 auto;
+                            "
+                        />
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <div
+                            class="d-grid gap-2 d-sm-flex justify-content-sm-end"
+                        >
+                            <a
+                                href="./profile.html"
+                                class="btn btn-secondary order-sm-1 mb-2 mb-sm-0"
+                                >Abbrechen</a
+                            >
+                            <button type="submit" class="gbutton order-sm-2">
+                                <span class="text"
+                                    ><i class="bi bi-plus-circle-fill me-2"></i
+                                    >Fahrzeug hinzufügen</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-center text-white py-4 mt-auto">
+            <div class="container">
+                <p class="mb-1">Made by Benjamin, Marcel, Eron & Aaron</p>
+            </div>
+        </footer>
+
+        <script src="../ressources/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const isLoggedIn =
+                    localStorage.getItem("simulatedLogin") === "true";
+                const username =
+                    localStorage.getItem("simulatedUsername") || "Gast";
+                const navProfileButton =
+                    document.getElementById("navProfileButton");
+
+                if (!isLoggedIn) {
+                    window.location.href = "./login.html";
+                    return;
+                }
+
+                if (navProfileButton) {
+                    navProfileButton.textContent = username;
+                    navProfileButton.href = "./profile.html";
+                }
+
+                const vehicleImageInput =
+                    document.getElementById("vehicleImage");
+                const vehicleImagePreview = document.getElementById(
+                    "vehicleImagePreview"
+                );
+                let vehicleImageDataBase64 = null;
+
+                if (vehicleImageInput && vehicleImagePreview) {
+                    vehicleImageInput.addEventListener(
+                        "change",
+                        function (event) {
+                            const file = event.target.files[0];
+                            if (file && file.type.startsWith("image/")) {
+                                const reader = new FileReader();
+                                reader.onload = function (e) {
+                                    vehicleImagePreview.src = e.target.result;
+                                    vehicleImageDataBase64 = e.target.result;
+                                };
+                                reader.readAsDataURL(file);
+                            } else {
+                                vehicleImagePreview.src =
+                                    "../ressources/images/car_placeholder.png";
+                                vehicleImageDataBase64 = null;
+                            }
+                        }
+                    );
+                }
+
+                document
+                    .getElementById("addVehicleForm")
+                    .addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        const newVehicle = {
+                            id: Date.now(),
+                            name: document.getElementById("vehicleName").value,
+                            brand: document.getElementById("vehicleBrand")
+                                .value,
+                            model: document.getElementById("vehicleModel")
+                                .value,
+                            year: document.getElementById("vehicleYear").value,
+                            color: document.getElementById("vehicleColor")
+                                .value,
+                            engine: document.getElementById("vehicleEngine")
+                                .value,
+                            power: document.getElementById("vehiclePower")
+                                .value,
+                            description:
+                                document.getElementById("vehicleDescription")
+                                    .value,
+                            modifications: document.getElementById(
+                                "vehicleModifications"
+                            ).value,
+                            imagePreviewUrl:
+                                vehicleImageDataBase64 ||
+                                "./ressources/images/placeholder-car.png",
+                        };
+
+                        let vehicles =
+                            JSON.parse(localStorage.getItem("userVehicles")) ||
+                            [];
+                        vehicles.push(newVehicle);
+                        localStorage.setItem(
+                            "userVehicles",
+                            JSON.stringify(vehicles)
+                        );
+
+                        alert("Fahrzeug simuliert hinzugefügt!");
+                        window.location.href = "./profile.html";
+                    });
+            });
+        </script>
+    </body>
+</html>

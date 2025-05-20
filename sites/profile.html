@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mein Profil - Underground Society</title>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../ressources/css/style.css" />
+        <link rel="stylesheet" href="../ressources/css/profile.css" />
+        <link
+            rel="stylesheet"
+            href="../ressources/icons/bootstrap-icons.min.css"
+        />
+        <link
+            href="../ressources/fonts/audiowide/audiowide.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100 audiowide-font">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"
+                    >UNDERGROUND SOCIETY</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html"
+                                >Galerie</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./forum.html">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./events.html">Events</a>
+                        </li>
+                    </ul>
+
+                    <button
+                        onclick="window.location.href='./profile.html'"
+                        class="btn btn-danger"
+                        type="submit"
+                    >
+                        Profil
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar-neon-accent"></div>
+
+        <main class="container py-5 flex-grow-1">
+            <div class="profile-header text-center">
+                <img
+                    src="../ressources/images/profile.png"
+                    alt="Profilbild"
+                    id="profileAvatar"
+                    class="profile-avatar"
+                />
+                <h1
+                    class="display-5 fw-bold text-body-emphasis"
+                    id="profileUsername"
+                >
+                    Lade Profil...
+                </h1>
+                <p class="lead text-body-secondary" id="profileBio">
+                    Lade Bio...
+                </p>
+                <a
+                    href="./edit-profile.html"
+                    class="btn btn-outline-light btn-sm me-2"
+                    >Profil bearbeiten</a
+                >
+                <button id="logoutButton" class="btn btn-outline-danger btn-sm">
+                    Ausloggen
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="profile-section">
+                        <h2 class="pb-2 border-bottom">Über Mich</h2>
+                        <p id="profileDescription">Lade Beschreibung...</p>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2 class="pb-2 border-bottom">Meine Fahrzeuge</h2>
+                        <div
+                            class="row row-cols-1 row-cols-md-2 g-4"
+                            id="profileCarsContainer"
+                        >
+                            <div class="col">
+                                <p>Lade Fahrzeuge...</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="./add-vehicle.html" class="gbutton">
+                                <span class="text"
+                                    >Neues Fahrzeug hinzufügen</span
+                                >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-center text-white py-4 mt-auto">
+            <div class="container">
+                <p class="mb-1">Made by Benjamin, Marcel, Eron & Aaron</p>
+            </div>
+        </footer>
+
+        <script src="../ressources/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const isLoggedIn =
+                    localStorage.getItem("simulatedLogin") === "true";
+                const username = localStorage.getItem("simulatedUsername");
+                const userBio = localStorage.getItem("simulatedBio");
+                const userAvatarUrl =
+                    localStorage.getItem("simulatedAvatarUrl");
+
+                const navProfileButton =
+                    document.getElementById("navProfileButton");
+
+                if (!isLoggedIn) {
+                    window.location.href = "./login.html";
+                    return;
+                }
+
+                if (navProfileButton) {
+                    navProfileButton.textContent = username || "Profil";
+                    navProfileButton.href = "./profile.html";
+                }
+
+                const usernameElement =
+                    document.getElementById("profileUsername");
+                const bioElement = document.getElementById("profileBio");
+                const avatarElement = document.getElementById("profileAvatar");
+                const descriptionElement =
+                    document.getElementById("profileDescription");
+
+                if (usernameElement)
+                    usernameElement.textContent =
+                        username || "Unbekannter Benutzer";
+                if (bioElement)
+                    bioElement.textContent =
+                        userBio ||
+                        'Keine Bio angegeben. Klicke auf "Profil bearbeiten", um eine hinzuzufügen!';
+                if (descriptionElement)
+                    descriptionElement.textContent =
+                        userBio || "Keine ausführliche Beschreibung vorhanden.";
+                if (avatarElement && userAvatarUrl) {
+                    avatarElement.src = userAvatarUrl;
+                } else if (avatarElement) {
+                    avatarElement.src = "../ressources/images/profile.png";
+                }
+
+                const carsContainer = document.getElementById(
+                    "profileCarsContainer"
+                );
+                const vehiclesString = localStorage.getItem("userVehicles");
+                let vehicles = [];
+
+                if (vehiclesString) {
+                    try {
+                        vehicles = JSON.parse(vehiclesString);
+                    } catch (e) {
+                        console.error(
+                            "Fehler beim Parsen der Fahrzeuge aus localStorage:",
+                            e
+                        );
+                        vehicles = [];
+                    }
+                }
+
+                if (carsContainer) {
+                    carsContainer.innerHTML = "";
+                    if (vehicles.length > 0) {
+                        vehicles.forEach((car) => {
+                            const carImage =
+                                car.imagePreviewUrl ||
+                                "./ressources/images/placeholder-car.png";
+                            const carCardHtml = `
+                                <div class="col">
+                                    <div class="card car-card h-100">
+                                        <img src="${carImage}" class="card-img-top" alt="${
+                                car.name || "Fahrzeug"
+                            }">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${
+                                                car.name ||
+                                                "Unbenanntes Fahrzeug"
+                                            }</h5>
+                                            <p class="card-text">${
+                                                car.description ||
+                                                "Keine Details."
+                                            }</p>
+                                            ${
+                                                car.id
+                                                    ? `<a href="./sites/cars/car-detail-sim.html?id=${car.id}" class="btn btn-sm btn-danger">Details ansehen (Sim)</a>`
+                                                    : ""
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            carsContainer.insertAdjacentHTML(
+                                "beforeend",
+                                carCardHtml
+                            );
+                        });
+                    } else {
+                        carsContainer.innerHTML =
+                            '<div class="col"><p>Du hast noch keine Fahrzeuge hinzugefügt. <a href="add-vehicle.html" class="link-light">Jetzt eins hinzufügen!</a></p></div>';
+                    }
+                }
+
+                const logoutButton = document.getElementById("logoutButton");
+                if (logoutButton) {
+                    logoutButton.addEventListener("click", function () {
+                        localStorage.removeItem("simulatedLogin");
+                        localStorage.removeItem("simulatedUsername");
+                        localStorage.removeItem("simulatedBio");
+                        localStorage.removeItem("simulatedAvatarUrl");
+                        localStorage.removeItem("userVehicles");
+                        window.location.href = "./login.html";
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

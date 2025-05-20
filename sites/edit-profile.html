@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Profil bearbeiten - Underground Society</title>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../ressources/css/style.css" />
+        <link rel="stylesheet" href="../ressources/css/user-forms.css" />
+        <link
+            rel="stylesheet"
+            href="../ressources/icons/bootstrap-icons.min.css"
+        />
+        <link
+            href="../ressources/fonts/audiowide/audiowide.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100 audiowide-font">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"
+                    >UNDERGROUND SOCIETY</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html"
+                                >Galerie</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./forum.html">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./events.html">Events</a>
+                        </li>
+                    </ul>
+
+                    <button
+                        onclick="window.location.href='./profile.html'"
+                        class="btn btn-danger"
+                        type="submit"
+                    >
+                        Profil
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar-neon-accent"></div>
+
+        <main class="container flex-grow-1">
+            <div class="form-container mx-auto">
+                <h1 class="text-center">Profil bearbeiten</h1>
+                <form id="editProfileForm">
+                    <div class="mb-4 text-center">
+                        <img
+                            src="../ressources/images/profile.png"
+                            alt="Aktuelles Profilbild"
+                            id="profilePicturePreview"
+                            class="profile-picture-preview mb-2"
+                        />
+                        <label for="profilePicture" class="form-label"
+                            >Profilbild ändern</label
+                        >
+                        <input
+                            class="form-control"
+                            type="file"
+                            id="profilePicture"
+                            name="profilePicture"
+                            accept="image/*"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label"
+                            >Benutzername</label
+                        >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="username"
+                            name="username"
+                            value="AktuellerBenutzername"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label"
+                            >E-Mail-Adresse</label
+                        >
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            value="benutzer@example.com"
+                            readonly
+                        />
+                        <div class="form-text">
+                            E-Mail-Adresse kann hier nicht geändert werden
+                            (Beispiel).
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="bio" class="form-label"
+                            >Über Mich (Bio)</label
+                        >
+                        <textarea
+                            class="form-control"
+                            id="bio"
+                            name="bio"
+                            rows="4"
+                        >
+Auto-Enthusiast | Schrauber | Petrolhead</textarea
+                        >
+                    </div>
+
+                    <hr class="my-4" />
+                    <h5 class="mb-3">Passwort ändern (optional)</h5>
+                    <div class="mb-3">
+                        <label for="currentPassword" class="form-label"
+                            >Aktuelles Passwort</label
+                        >
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="currentPassword"
+                            name="currentPassword"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label"
+                            >Neues Passwort</label
+                        >
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="newPassword"
+                            name="newPassword"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmNewPassword" class="form-label"
+                            >Neues Passwort bestätigen</label
+                        >
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="confirmNewPassword"
+                            name="confirmNewPassword"
+                        />
+                    </div>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <div
+                            class="d-grid gap-2 d-sm-flex justify-content-sm-end"
+                        >
+                            <a
+                                href="./profile.html"
+                                class="btn btn-secondary order-sm-1 mb-2 mb-sm-0"
+                                >Abbrechen</a
+                            >
+                            <button type="submit" class="gbutton order-sm-2">
+                                <span class="text">Änderungen speichern</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-center text-white py-4 mt-auto">
+            <div class="container">
+                <p class="mb-1">Made by Benjamin, Marcel, Eron & Aaron</p>
+            </div>
+        </footer>
+
+        <script src="../ressources/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const isLoggedIn =
+                    localStorage.getItem("simulatedLogin") === "true";
+                const username = localStorage.getItem("simulatedUsername");
+                const userBio =
+                    localStorage.getItem("simulatedBio") ||
+                    "Auto-Enthusiast | Schrauber | Petrolhead";
+                const userAvatar =
+                    localStorage.getItem("simulatedAvatarUrl") ||
+                    "../ressources/images/profile.png";
+                const userEmail = "benutzer@example.com";
+
+                const navProfileButton =
+                    document.getElementById("navProfileButton");
+
+                if (!isLoggedIn) {
+                    window.location.href = "./login.html";
+                    return;
+                }
+
+                if (navProfileButton) {
+                    navProfileButton.textContent = username || "Profil";
+                    navProfileButton.href = "./profile.html";
+                }
+
+                if (username)
+                    document.getElementById("username").value = username;
+                document.getElementById("email").value = userEmail;
+                document.getElementById("bio").value = userBio; // .value für textarea
+                document.getElementById("profilePicturePreview").src =
+                    userAvatar;
+
+                document
+                    .getElementById("editProfileForm")
+                    .addEventListener("submit", function (event) {
+                        event.preventDefault();
+
+                        const newUsername =
+                            document.getElementById("username").value;
+                        const newBio = document.getElementById("bio").value;
+                        const newPassword =
+                            document.getElementById("newPassword").value;
+                        const confirmNewPassword =
+                            document.getElementById("confirmNewPassword").value;
+
+                        if (newPassword && newPassword !== confirmNewPassword) {
+                            alert(
+                                "Die neuen Passwörter stimmen nicht überein!"
+                            );
+                            return;
+                        }
+
+                        localStorage.setItem("simulatedUsername", newUsername);
+                        localStorage.setItem("simulatedBio", newBio);
+
+                        const profilePictureFile =
+                            document.getElementById("profilePicture").files[0];
+                        if (profilePictureFile) {
+                            const reader = new FileReader();
+                            reader.onloadend = function () {
+                                localStorage.setItem(
+                                    "simulatedAvatarUrl",
+                                    reader.result
+                                );
+                                alert(
+                                    "Profiländerungen simuliert gespeichert! (Mit Bild)"
+                                );
+                                window.location.href = "./profile.html";
+                            };
+                            reader.readAsDataURL(profilePictureFile);
+                        } else {
+                            alert(
+                                "Profiländerungen simuliert gespeichert! (Ohne neues Bild)"
+                            );
+                            window.location.href = "./profile.html";
+                        }
+                    });
+
+                const profilePictureInput =
+                    document.getElementById("profilePicture");
+                const profilePicturePreview = document.getElementById(
+                    "profilePicturePreview"
+                );
+                if (profilePictureInput && profilePicturePreview) {
+                    profilePictureInput.addEventListener(
+                        "change",
+                        function (event) {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = function (e) {
+                                    profilePicturePreview.src = e.target.result;
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        }
+                    );
+                }
+            });
+        </script>
+    </body>
+</html>

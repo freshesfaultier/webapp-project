@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Forum - Underground Society</title>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../ressources/css/style.css" />
+        <link rel="stylesheet" href="../ressources/css/forum.css" />
+        <link
+            rel="stylesheet"
+            href="../ressources/icons/bootstrap-icons.min.css"
+        />
+        <link
+            href="../ressources/fonts/audiowide/audiowide.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100 audiowide-font">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"
+                    >UNDERGROUND SOCIETY</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html"
+                                >Galerie</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                aria-current="page"
+                                href="./forum.html"
+                                >Forum</a
+                            >
+                        </li>
+                    </ul>
+                    <button class="btn btn-danger" type="button">Profil</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="navbar-neon-accent"></div>
+
+        <main class="container mt-4 mb-5 flex-grow-1">
+            <header class="text-center mb-5">
+                <h1 class="forum-title">Community Forum</h1>
+                <p class="lead text-muted">
+                    Diskutiere, teile Ideen und verbinde dich mit anderen Car
+                    Enthusiasten.
+                </p>
+            </header>
+
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <form class="d-flex" role="search">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Threads durchsuchen..."
+                            aria-label="Search"
+                        />
+                        <button class="btn btn-outline-danger" type="submit">
+                            <i class="bi bi-search"></i> Suchen
+                        </button>
+                    </form>
+                </div>
+                <div
+                    class="col-md-4 text-md-end mt-3 mt-md-0"
+                    id="newThreadBtnContainer"
+                >
+                    <button
+                        type="button"
+                        class="btn btn-danger gbutton"
+                        data-bs-toggle="modal"
+                        data-bs-target="#newThreadModal"
+                    >
+                        <i class="bi bi-plus-circle-fill"></i> Neuen Thread
+                        erstellen
+                    </button>
+                </div>
+            </div>
+
+            <div class="forum-section">
+                <h2 class="section-title mb-3">
+                    <i class="bi bi-chat-square-dots-fill"></i> Allgemeine
+                    Diskussionen
+                </h2>
+                <div class="list-group thread-list">
+                    <a
+                        href="#"
+                        class="list-group-item list-group-item-action thread-item"
+                        aria-current="true"
+                    >
+                        <div
+                            class="d-flex w-100 justify-content-between align-items-center"
+                        >
+                            <h5 class="mb-1 thread-title-link">
+                                Willkommen im Forum! Stell dich vor!
+                            </h5>
+                            <small class="text-muted">3 Antworten</small>
+                        </div>
+                        <p class="mb-1 thread-excerpt">
+                            Dies ist ein Ort, um Hallo zu sagen und dich der
+                            Community vorzustellen...
+                        </p>
+                        <small class="text-muted"
+                            >Letzter Beitrag vor 2 Stunden von
+                            <span class="username">TunerKing</span></small
+                        >
+                    </a>
+                    <a
+                        href="#"
+                        class="list-group-item list-group-item-action thread-item"
+                    >
+                        <div
+                            class="d-flex w-100 justify-content-between align-items-center"
+                        >
+                            <h5 class="mb-1 thread-title-link">
+                                Zeigt her eure besten Umbauten!
+                            </h5>
+                            <small class="text-muted">15 Antworten</small>
+                        </div>
+                        <p class="mb-1 thread-excerpt">
+                            Teile Bilder und Details deiner Fahrzeugprojekte und
+                            Umbauten.
+                        </p>
+                        <small class="text-muted"
+                            >Letzter Beitrag vor 30 Minuten von
+                            <span class="username">SpeedDemon</span></small
+                        >
+                    </a>
+                    <a
+                        href="#"
+                        class="list-group-item list-group-item-action thread-item"
+                    >
+                        <div
+                            class="d-flex w-100 justify-content-between align-items-center"
+                        >
+                            <h5 class="mb-1 thread-title-link">
+                                Nächstes Community Treffen - Vorschläge?
+                            </h5>
+                            <small class="text-muted">8 Antworten</small>
+                        </div>
+                        <p class="mb-1 thread-excerpt">
+                            Lasst uns das nächste Treffen planen. Wo und wann
+                            soll es stattfinden?
+                        </p>
+                        <small class="text-muted"
+                            >Letzter Beitrag vor 5 Stunden von
+                            <span class="username">Admin</span></small
+                        >
+                    </a>
+                </div>
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1"
+                            >Vorherige</a
+                        >
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Nächste</a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+
+        <div
+            class="modal fade"
+            id="newThreadModal"
+            tabindex="-1"
+            aria-labelledby="newThreadModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="newThreadModalLabel">
+                            Neuen Thread erstellen
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="threadTitle" class="form-label"
+                                    >Titel des Threads</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="threadTitle"
+                                    placeholder="Gib deinem Thread einen aussagekräftigen Titel"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="threadCategory" class="form-label"
+                                    >Kategorie</label
+                                >
+                                <select class="form-select" id="threadCategory">
+                                    <option selected>
+                                        Wähle eine Kategorie...
+                                    </option>
+                                    <option value="1">
+                                        Allgemeine Diskussionen
+                                    </option>
+                                    <option value="2">Technik & Tuning</option>
+                                    <option value="3">Veranstaltungen</option>
+                                    <option value="4">Off-Topic</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="threadContent" class="form-label"
+                                    >Dein Beitrag</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="threadContent"
+                                    rows="8"
+                                    placeholder="Schreibe hier den ersten Beitrag deines Threads..."
+                                ></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Abbrechen
+                        </button>
+                        <button type="button" class="btn btn-danger gbutton">
+                            <i class="bi bi-send-fill"></i> Thread erstellen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-dark text-center text-white py-4 mt-auto">
+            <div class="container">
+                <p class="mb-1">Made by Benjamin, Marcel, Eron & Aaron</p>
+            </div>
+        </footer>
+
+        <script src="../ressources/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

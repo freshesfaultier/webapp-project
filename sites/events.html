@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="de" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Events – Underground Society</title>
+        <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../ressources/css/style.css" />
+
+        <link
+            rel="stylesheet"
+            href="../ressources/icons/bootstrap-icons.min.css"
+        />
+        <link
+            href="../ressources/fonts/audiowide/audiowide.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="d-flex flex-column min-vh-100 audiowide-font">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html"
+                    >UNDERGROUND SOCIETY</a
+                >
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gallery.html"
+                                >Galerie</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./events.html"
+                                >Events</a
+                            >
+                        </li>
+                    </ul>
+                    <button class="btn btn-danger" type="submit">Profil</button>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar-neon-accent"></div>
+
+        <!-- Community Events -->
+        <div class="container text-center py-5">
+            <h1 class="display-5 fw-bold">Events</h1>
+            <p class="lead">
+                Ob Tuning-Treffen, Car Meets oder internationale Messen – hier
+                findest du Events, für jeden Auto Entusiasten.
+            </p>
+        </div>
+
+        <!-- Event Cards -->
+        <div class="container">
+            <div class="row g-4">
+                <!-- Event 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card h-100 text-bg-dark border-secondary shadow"
+                    >
+                        <img
+                            src="../ressources/images/events/fulda.jpg"
+                            class="card-img-top"
+                            alt="Tuning World Fulda"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Tuning World Fulda</h5>
+                            <p class="card-text">
+                                Die größste Tuning-Messe in Fulda. <br />
+                                Pflichttermin für Szene-Fans.
+                            </p>
+                            <p>
+                                <i class="bi bi-calendar-event"></i> 15.–18. Mai
+                                2025
+                            </p>
+                            <p>
+                                <i class="bi bi-geo-alt"></i> Fulda, Deutschland
+                            </p>
+
+                            <button
+                                class="btn btn-outline-light btn-sm mt-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event1Modal"
+                            >
+                                Mehr Infos
+                            </button>
+                            <!-- Modal für Event 1 -->
+                            <div
+                                class="modal fade"
+                                id="event1Modal"
+                                tabindex="-1"
+                                aria-labelledby="event1ModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div
+                                    class="modal-dialog modal-dialog-centered modal-lg"
+                                >
+                                    <div
+                                        class="modal-content text-bg-dark border-secondary"
+                                    >
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="event1ModalLabel"
+                                            >
+                                                Tuning World Fulda
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Schließen"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                <strong>📍 Ort:</strong>
+                                                Messegelände Fulda
+                                            </p>
+                                            <p>
+                                                <strong>📅 Datum:</strong>
+                                                15.–18. Mai 2025
+                                            </p>
+                                            <p>
+                                                Erlebe die größte Tuning-Messe
+                                                der Region mit über 500
+                                                Ausstellern, Live-Demos, Show &
+                                                Shine-Wettbewerben und einer
+                                                exklusiven Drift-Arena. Perfekt
+                                                für Fans von JDM, Euro-Style und
+                                                Performance Builds.
+                                            </p>
+                                            <p>
+                                                Es gibt Foodtrucks, DJ-Sets,
+                                                Merchandise-Stände und die
+                                                Möglichkeit, dein Auto vor Ort
+                                                auszustellen (mit Voranmeldung).
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-light"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Schließen
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card h-100 text-bg-dark border-secondary shadow"
+                    >
+                        <img
+                            src="../ressources/images/events/nightmeet.jpg"
+                            class="card-img-top"
+                            alt="Underground Night Meet"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Underground Night Meet</h5>
+                            <p class="card-text">
+                                Dieses nächtliche Treffen bringt die Szene
+                                zusammen. Musik, Essen, Autos.
+                            </p>
+                            <p>
+                                <i class="bi bi-calendar-event"></i> 8. Juni
+                                2025
+                            </p>
+                            <p>
+                                <i class="bi bi-geo-alt"></i> Köln, Deutschland
+                            </p>
+
+                            <button
+                                class="btn btn-outline-light btn-sm mt-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event2Modal"
+                            >
+                                Mehr Infos
+                            </button>
+                            <!-- Modal für Event 2 -->
+                            <div
+                                class="modal fade"
+                                id="event2Modal"
+                                tabindex="-1"
+                                aria-labelledby="event2ModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div
+                                    class="modal-dialog modal-dialog-centered modal-lg"
+                                >
+                                    <div
+                                        class="modal-content text-bg-dark border-secondary"
+                                    >
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="event2ModalLabel"
+                                            >
+                                                Underground Night Meet
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Schließen"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                <strong>📍 Ort:</strong> Köln –
+                                                geheime Location (wird per Mail
+                                                bekanntgegeben)
+                                            </p>
+                                            <p>
+                                                <strong>📅 Datum:</strong> 8.
+                                                Juni 2025
+                                            </p>
+                                            <p>
+                                                Ein nächtliches Auto-Treffen mit
+                                                Underground-Vibe – keine
+                                                Werbung, nur Community. Vor Ort:
+                                                Live DJs, Food Trucks,
+                                                beleuchtete Showcases und
+                                                spontane Drag Races (nicht
+                                                offiziell 😏).
+                                            </p>
+                                            <p>
+                                                Teilnahme nur mit Anmeldung.
+                                                Eintritt kostenlos.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-light"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Schließen
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div
+                        class="card h-100 text-bg-dark border-secondary shadow"
+                    >
+                        <img
+                            src="../ressources/images/events/carshow.jpeg"
+                            class="card-img-top"
+                            alt="Street Legends Show"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Street Legends Show</h5>
+                            <p class="card-text">
+                                Internationale Show mit Fokus auf Import Cars,
+                                Driftsport und Awards.
+                            </p>
+                            <p>
+                                <i class="bi bi-calendar-event"></i> 22.–24.
+                                August 2025
+                            </p>
+                            <p>
+                                <i class="bi bi-geo-alt"></i> Wien, Österreich
+                            </p>
+
+                            <button
+                                class="btn btn-outline-light btn-sm mt-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#event3Modal"
+                            >
+                                Mehr Infos
+                            </button>
+                            <!-- Modal für Event 3 -->
+                            <div
+                                class="modal fade"
+                                id="event3Modal"
+                                tabindex="-1"
+                                aria-labelledby="event3ModalLabel"
+                                aria-hidden="true"
+                            >
+                                <div
+                                    class="modal-dialog modal-dialog-centered modal-lg"
+                                >
+                                    <div
+                                        class="modal-content text-bg-dark border-secondary"
+                                    >
+                                        <div class="modal-header">
+                                            <h5
+                                                class="modal-title"
+                                                id="event3ModalLabel"
+                                            >
+                                                Street Legends Show
+                                            </h5>
+                                            <button
+                                                type="button"
+                                                class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Schließen"
+                                            ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>
+                                                <strong>📍 Ort:</strong>
+                                                Messezentrum Wien
+                                            </p>
+                                            <p>
+                                                <strong>📅 Datum:</strong>
+                                                22.–24. August 2025
+                                            </p>
+                                            <p>
+                                                Die internationale Tuning- und
+                                                Motorshow mit Fokus auf
+                                                japanische Importe,
+                                                Drift-Wettbewerbe und einer Show
+                                                Area. Special Guests: Top-Tuner
+                                                aus Europa und Asien.
+                                            </p>
+                                            <p>
+                                                Tickets ab 15 €. Teilnahme an
+                                                Wettbewerben möglich – Anmeldung
+                                                erforderlich.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button
+                                                type="button"
+                                                class="btn btn-outline-light"
+                                                data-bs-dismiss="modal"
+                                            >
+                                                Schließen
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container px-4 py-5" id="faq">
+            <h2 class="pb-2 border-bottom">Häufig gestellte Fragen</h2>
+            <div class="accordion accordion-flush mt-4" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-heading-1">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-1"
+                            aria-expanded="false"
+                            aria-controls="faq-collapse-1"
+                        >
+                            Sind die Events kostenlos?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq-collapse-1"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="faq-heading-1"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Viele Events sind kostenlos, besonders die von der
+                            Community organisierten Treffen. Bei größeren Events
+                            wie Tuning-Messen oder Shows kann ein Eintritt
+                            verlangt werden – Infos dazu findest du immer in der
+                            jeweiligen Eventbeschreibung.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-heading-2">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#faq-collapse-2"
+                            aria-expanded="false"
+                            aria-controls="faq-collapse-2"
+                        >
+                            Muss ich mein Auto anmelden, um es zu zeigen?
+                        </button>
+                    </h2>
+                    <div
+                        id="faq-collapse-2"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="faq-heading-2"
+                        data-bs-parent="#faqAccordion"
+                    >
+                        <div class="accordion-body">
+                            Ja, bei offiziellen Showcases ist in der Regel eine
+                            Anmeldung erforderlich. Bei offenen Meetups kannst
+                            du meistens spontan vorbeikommen – mehr Infos
+                            findest du in der Eventbeschreibung.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-center mt-5">
+                <h5>Hast du weitere Fragen?</h5>
+                <a href="./forum.html">Zum Forum</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-center text-white py-4 mt-auto">
+            <div class="container">
+                <p class="mb-1">Made by Benjamin, Marcel, Eron & Aaron</p>
+            </div>
+        </footer>
+
+        <script src="../ressources/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

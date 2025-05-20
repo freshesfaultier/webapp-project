@@ -1,0 +1,175 @@
+/* ./ressources/css/forum.css */
+
+.forum-title {
+    color: #e31809; /* Haupt-Akzentfarbe Rot, passend zu car.css */
+    text-shadow: 0 0 8px rgba(227, 24, 9, 0.7),
+        0 0 15px rgba(227, 24, 9, 0.5);
+    font-size: 3rem; /* Etwas größer für den Haupttitel der Seite */
+    margin-bottom: 0.5rem;
+}
+
+.lead.text-muted {
+    color: #adb5bd !important; /* Etwas helleres Grau für bessere Lesbarkeit auf dunklem Grund */
+}
+
+#newThreadBtnContainer .btn-danger,
+#newThreadBtnContainer .btn-danger:hover,
+#newThreadBtnContainer .btn-danger:focus {
+    /* Konsistentes Button-Styling mit Glow-Effekt wie ggf. in style.css definiert */
+    /* Falls du spezielle Button-Styles hast, hier anpassen oder global in style.css sicherstellen */
+    box-shadow: 0 0 5px #e31809, 0 0 10px #e31809, 0 0 15px #e31809;
+}
+
+.gbutton i {
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.forum-section .section-title {
+    font-size: 1.75rem;
+    color: #f8f9fa; /* Helles Weiß für Sektionstitel */
+    border-bottom: 2px solid #e31809; /* Rote Akzentlinie unter Titeln */
+    padding-bottom: 0.5rem;
+    display: inline-block; /* Damit der Border nur so lang ist wie der Text */
+}
+
+.forum-section .section-title i {
+    margin-right: 0.5rem;
+    color: #e31809; /* Icon-Farbe passend zum Akzent */
+}
+
+.thread-list .thread-item {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.03
+    ); /* Sehr dezenter Hintergrund für Thread-Items */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.thread-list .thread-item:hover {
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.07
+    ); /* Etwas hellerer Hintergrund beim Hover */
+    border-color: #e31809;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(227, 24, 9, 0.2);
+}
+
+.thread-list .thread-item .thread-title-link {
+    color: #ff4136; /* Helleres Rot für Thread-Titel, gute Lesbarkeit */
+    text-decoration: none;
+    font-size: 1.15rem;
+}
+.thread-list .thread-item:hover .thread-title-link {
+    color: #ff6b61;
+}
+
+.thread-list .thread-item .thread-excerpt {
+    font-size: 0.9rem;
+    color: #ced4da; /* Helles Grau für den Text-Auszug */
+}
+
+.thread-list .thread-item small.text-muted {
+    font-size: 0.8rem;
+    color: #899097 !important; /* Dunkleres Grau für Metadaten */
+}
+
+.thread-list .thread-item .username {
+    color: #e31809;
+    font-weight: 500;
+}
+
+/* Pagination Styling */
+.pagination .page-item .page-link {
+    background-color: #212529;
+    border-color: #495057;
+    color: #f8f9fa;
+    transition: background-color 0.2s ease, color 0.2s ease,
+        border-color 0.2s ease;
+}
+.pagination .page-item.active .page-link {
+    background-color: #e31809;
+    border-color: #e31809;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(227, 24, 9, 0.5);
+}
+.pagination .page-item:not(.disabled) .page-link:hover {
+    background-color: #c01408;
+    border-color: #c01408;
+    color: #fff;
+}
+.pagination .page-item.disabled .page-link {
+    background-color: #343a40;
+    border-color: #495057;
+    color: #6c757d;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #1a1d20; /* Dunkler Hintergrund für Modal */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(227, 24, 9, 0.2);
+}
+.modal-header {
+    border-bottom: 1px solid #e31809;
+}
+.modal-title {
+    color: #e31809;
+}
+.modal-body .form-label {
+    color: #f8f9fa;
+}
+
+.modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Anpassung für Suchleiste */
+.form-control[type="search"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+.form-control[type="search"]::placeholder {
+    color: #adb5bd;
+}
+.form-control[type="search"]:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #e31809;
+    box-shadow: 0 0 0 0.25rem rgba(227, 24, 9, 0.3);
+    color: #fff;
+}
+
+.btn-outline-danger {
+    color: #e31809;
+    border-color: #e31809;
+}
+.btn-outline-danger:hover,
+.btn-outline-danger:focus {
+    color: #fff;
+    background-color: #e31809;
+    border-color: #e31809;
+    box-shadow: 0 0 8px #e31809;
+}
+
+@media (max-width: 768px) {
+    .forum-title {
+        font-size: 2.4rem;
+    }
+    .forum-section .section-title {
+        font-size: 1.5rem;
+    }
+    .thread-list .thread-item .thread-title-link {
+        font-size: 1.05rem;
+    }
+    #newThreadBtnContainer {
+        text-align: center !important;
+    }
+}

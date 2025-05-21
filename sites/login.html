@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Anmelden - Underground Society</title>
+
+        <!-- CSS -->
         <link rel="stylesheet" href="../ressources/css/bootstrap.min.css" />
         <link rel="stylesheet" href="../ressources/css/style.css" />
         <link rel="stylesheet" href="../ressources/css/auth.css" />
@@ -12,9 +14,29 @@
             href="../ressources/icons/bootstrap-icons.min.css"
         />
         <link
-            href="../ressources/fonts/audiowide/audiowide.css"
             rel="stylesheet"
+            href="../ressources/fonts/audiowide/audiowide.css"
         />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="../ressources/favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../ressources/favicon/favicon.svg"
+        />
+        <link rel="shortcut icon" href="../ressources/favicon/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="../ressources/favicon/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="../ressources/favicon/site.webmanifest" />
     </head>
     <body class="d-flex flex-column min-vh-100 audiowide-font">
         <!-- Navigation -->
@@ -130,39 +152,6 @@
         </footer>
 
         <script src="../ressources/js/bootstrap.bundle.min.js"></script>
-        <script>
-            document
-                .getElementById("loginForm")
-                .addEventListener("submit", function (event) {
-                    event.preventDefault();
-                    const emailInput =
-                        document.getElementById("loginEmail").value;
-                    const passwordInput =
-                        document.getElementById("loginPassword").value;
-
-                    if (
-                        emailInput.trim() !== "" &&
-                        passwordInput.trim() !== ""
-                    ) {
-                        localStorage.setItem("simulatedLogin", "true");
-                        localStorage.setItem(
-                            "simulatedUsername",
-                            emailInput.split("@")[0]
-                        );
-                        window.location.href = "./profile.html";
-                    } else {
-                        alert(
-                            "Bitte geben Sie E-Mail/Benutzername und Passwort ein."
-                        );
-                    }
-                });
-
-            const navProfileButtonLogin =
-                document.getElementById("navProfileButton");
-            if (navProfileButtonLogin) {
-                navProfileButtonLogin.textContent = "Login";
-                navProfileButtonLogin.href = "./login.html";
-            }
-        </script>
+        <script src="../ressources/js/login.js"></script>
     </body>
 </html>

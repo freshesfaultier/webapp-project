@@ -1,9 +1,6 @@
-/* ./ressources/css/forum.css */
-
 .forum-title {
     color: #e31809; /* Haupt-Akzentfarbe Rot, passend zu car.css */
-    text-shadow: 0 0 8px rgba(227, 24, 9, 0.7),
-        0 0 15px rgba(227, 24, 9, 0.5);
+    text-shadow: 0 0 8px rgba(227, 24, 9, 0.7), 0 0 15px rgba(227, 24, 9, 0.5);
     font-size: 3rem; /* Etwas größer für den Haupttitel der Seite */
     margin-bottom: 0.5rem;
 }
